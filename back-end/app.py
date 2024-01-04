@@ -21,7 +21,7 @@ app.add_middleware(
 
 @app.post("/upload")
 async def upload_audio(file: UploadFile = File(...)):
-    file_path = f"C:/Users/Nam/Desktop/Front/MyFresher/my-app-fresher/back-end/audio/{file.filename}"
+    file_path = f"E:/AI/TestWeb/Gender_Recognition_By_Voice_/back-end/audio/{file.filename}"
     with open(file_path, "wb") as f:
         contents = await file.read()
         f.write(contents)
@@ -31,8 +31,5 @@ async def upload_audio(file: UploadFile = File(...)):
 @app.get("/runchart")
 async def run_chart():
     process = subprocess.Popen(["python", "main.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    output, error = process.communicate()
-    if error:
-        return {"output": None, "error": error.decode("utf-8")}
-    else:
-        return {"output": output.decode("utf-8"), "error": None}
+    output = process.communicate()
+    return output

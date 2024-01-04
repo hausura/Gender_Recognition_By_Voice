@@ -22,7 +22,7 @@ root.render(
               </Routes>
            </BrowserRouter> */}
            <VoiceRecorder/>
-           {/* <Gender/> */}
+           {<Gender/> }
   </React.StrictMode>
 );
 

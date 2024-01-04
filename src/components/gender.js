@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './main.css'
 
 function Gender() {
   const [result, setResult] = useState('');
@@ -8,7 +9,7 @@ function Gender() {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:8000/runchart');
-        setResult(response.data.result);
+        setResult(response.data[0]);
       } catch (error) {
         console.error('Lỗi:', error);
       }
@@ -18,9 +19,9 @@ function Gender() {
   }, []);
 
   return (
-    <div>
-      <h1>Kết quả từ API:</h1>
-      <p>{result}</p>
+    <div className='containerResult'>
+      <h1>Your gender is:</h1>
+      <p className='result'>{result}</p>
     </div>
   );
 }
