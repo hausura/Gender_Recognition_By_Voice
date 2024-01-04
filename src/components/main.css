@@ -1,0 +1,75 @@
+.button {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* Điều này sẽ tạo hình dạng hình tròn */
+  background-color: #471099;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  border: 20px solid #df9c0c; /* Tạo viền cho button */
+  box-sizing: border-box; /* Đảm bảo kích thước không bị thay đổi bởi viền */
+  font-weight: bold;
+  font-size: 36px; /* Tăng cỡ chữ của tiêu đề h1 lên 36px */
+
+
+  }
+  
+  .button:hover {
+    background-color: #370c78;
+    color: #bba3de;
+
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px; /* Đặt chiều cao tùy ý */
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 1rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  li {
+    margin-right: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    color: #ff0;
+  }
+  
