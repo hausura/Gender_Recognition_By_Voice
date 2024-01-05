@@ -37,7 +37,7 @@ class VoiceRecorder extends React.Component {
         await recorder.initAudio();
         await recorder.initWorker();
         recorder.startRecording();
-        this.setState({ isLoading: false, isRecording: true });
+        this.setState({ isLoading: false, isRecording: true,recorded: false });
       } catch (e) {
         console.error(e);
         this.setState({ isLoading: false });
