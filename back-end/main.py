@@ -17,7 +17,7 @@ def main():
 
     trained_neural_net = pickle.load(open('trained_neural_net', 'rb'))  # load trained neural net from file
 
-    return('Female' if trained_neural_net.predict(data)[0] == 0 else 'Male')  # print prediction
+    return('Female' if trained_neural_net.predict(data) == 0 else 'Male')  # print prediction
 if __name__ == '__main__':
     print(main())
 
