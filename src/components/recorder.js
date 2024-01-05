@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import vmsg from "vmsg";
 import { ReactMic } from 'react-mic';
 import './main.css';
+import Gender from "./gender";
 
 
 const recorder = new vmsg.Recorder({
@@ -12,6 +13,7 @@ class VoiceRecorder extends React.Component {
   state = {
     isLoading: false,
     isRecording: false,
+    recorded:false,
     recordings: []
   };
   
@@ -26,6 +28,7 @@ class VoiceRecorder extends React.Component {
       this.setState({
         isLoading: false,
         isRecording: false,
+        recorded:true,
         recordings: this.state.recordings.concat(URL.createObjectURL(blob))
       });
     } else {
@@ -43,7 +46,7 @@ class VoiceRecorder extends React.Component {
   
   
   render() {
-    const { isLoading, isRecording } = this.state;
+    const { isLoading, isRecording,recorded } = this.state;
     return (
       <>
 
@@ -57,7 +60,8 @@ class VoiceRecorder extends React.Component {
             <button class="button"  disabled={isLoading} onClick={this.record}>
               {isRecording ? "Stop" : "Record"}
             </button>
-                  </React.Fragment>
+            </React.Fragment>
+            {recorded &&<Gender/>}
         </div>
       </>
     );

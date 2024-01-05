@@ -5,8 +5,10 @@ const Home = () =>{
     return(
         <>
             <VoiceRecorder/>
-            <Gender/>
+            {/* <Gender/> */}
         </>
     )
 }
+
+
 export default Home
