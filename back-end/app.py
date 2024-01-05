@@ -21,7 +21,7 @@ app.add_middleware(
 
 @app.post("/upload")
 async def upload_audio(file: UploadFile = File(...)):
-    file_path = f"E:/AI/TestWeb/Gender_Recognition_By_Voice_/back-end/sounds/{file.filename}"
+    file_path = f"C:/Users/Nam/Desktop/Front/MyFresher/my-app-fresher/back-end/sounds/{file.filename}"
     with open(file_path, "wb") as f:
         contents = await file.read()
         f.write(contents)
