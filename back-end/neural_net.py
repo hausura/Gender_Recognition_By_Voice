@@ -29,7 +29,7 @@ def train_neural_net(x_train, y_train):
     print('\nSaving trained neural net to file...')
     pickle.dump(neural_net, open('trained_neural_net', 'wb'))
 
-    #visualize(pd.Series(neural_net.loss_curve_), graph_type='area')  # plot loss curve
+    #visualize(pd.Series(neural_net.loss_curve_), graph_type='area')  # plot le
 
     return neural_net
 
