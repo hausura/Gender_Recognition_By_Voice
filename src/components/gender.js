@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './main.css'
 
-function Gender() {
+function Gender(props) {
   const [result, setResult] = useState('');
+  const {recored}=props
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,11 +15,12 @@ function Gender() {
         console.error('Lỗi:', error);
       }
     };
-    const interval = setInterval(() => {
-      fetchData();
-    }, 1000);
+    if(recored){
+      const interval = setInterval(() => {
+        fetchData();
+      }, 1000);
     return () => clearInterval(interval); // Xóa interval khi component unmount
-
+    }
   }, []);
 
   return (

@@ -10,6 +10,7 @@ const recorder = new vmsg.Recorder({
   wasmURL: "https://unpkg.com/vmsg@0.3.0/vmsg.wasm"
 });
 class VoiceRecorder extends React.Component {
+  
   state = {
     isLoading: false,
     isRecording: false,
@@ -61,7 +62,7 @@ class VoiceRecorder extends React.Component {
               {isRecording ? "Stop" : "Record"}
             </button>
             </React.Fragment>
-            {recorded &&<Gender/>}
+            {recorded &&<Gender recorded={recorded} />}
         </div>
       </>
     );
