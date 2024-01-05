@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+h1 {
+    font-size: 36px;
+    text-align: center;
+}   
+p {
+    font-size: 18px;
+}
+.soucrce{
+    font-size: 10px;
+}
+.body{
+        margin: 20px;
+}
+h2 {
+    border-bottom: 1px solid #ccc; /* Thêm đường gạch ngang */
+    padding: 8px 0; /* Tạo khoảng cách */
+  }
+.show{
+    width: 700px;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://th.bing.com/th/id/R.8df12c6684ea27a5bfead135c0c09d85?rik=cL3lWvv8BE1rjA&pid=ImgRaw&r=0') ;
+}

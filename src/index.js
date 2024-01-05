@@ -2,9 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import VoiceRecorder from './components/recorder';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import Home from './components/homeContainer';
 import Gender from './components/gender';
+import VoiceRecorder from './components/recorder';
+import Contact from './components/contact';
+import About from './components/about';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -16,13 +19,15 @@ root.render(
                   <li><a href="Contact">Contact</a></li>
                 </ul>
               </nav>
-           {/* <BrowserRouter>
+           <BrowserRouter>
               <Routes>
-                      <Route path="/" element={<VoiceRecorder/>}/>
+                      <Route path="/" element={<Home/>}/>
+                      <Route path="/About" element={<About/>}/>
+                      <Route path="/Contact" element={<Contact/>} />
+
               </Routes>
-           </BrowserRouter> */}
-           <VoiceRecorder/>
-           {<Gender/> }
+           </BrowserRouter>
+
   </React.StrictMode>
 );
 
