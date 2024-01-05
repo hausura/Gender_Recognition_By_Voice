@@ -14,8 +14,11 @@ function Gender() {
         console.error('Lỗi:', error);
       }
     };
+    const interval = setInterval(() => {
+      fetchData();
+    }, 1000);
+    return () => clearInterval(interval); // Xóa interval khi component unmount
 
-    fetchData();
   }, []);
 
   return (
