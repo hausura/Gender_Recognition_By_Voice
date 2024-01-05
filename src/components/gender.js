@@ -15,7 +15,7 @@ function Gender(props) {
         console.error('Lỗi:', error);
       }
     };
-    if(recored){
+    if(!recored){
       const interval = setInterval(() => {
         fetchData();
       }, 1000);
