@@ -86,3 +86,24 @@
     color: #ff0;
   }
   
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .icons a {
+    text-decoration: none;
+  }
+
+  .icons a svg {
+    fill: #fdf5e6 !important;
+    transform: scale(1);
+  }
+  .contact{
+    /* padding-top: 100px; */
+    height: 150px;
+  }
+  h1{
+    color: #d9a923;
+  }
