@@ -284,7 +284,9 @@ processFolder <- function(folderName) {
   
   # Add file list to data.frame for processing.
   for (fileName in list) {
-    row <- data.frame(fileName, 0, 0, 20)
+    audio <- tuneR::readWave(file.path(soundLocation, fileName))
+    duration <- length(audio@left) / audio@samp.rate
+    row <- data.frame(fileName, 0, 0, duration)
     data <- rbind(data, row)
   }
   
