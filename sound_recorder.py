@@ -12,15 +12,16 @@ RATE = 44100
 # RECORD_SECONDS = 5
 WAVE_OUTPUT_FILENAME = 'output.wav'
 
-p = pyaudio.PyAudio()
-
-stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
-
-if not os.path.exists('sounds'):
-    os.makedirs('sounds')
 
 
 def run(RECORD_SECONDS):
+    p = pyaudio.PyAudio()
+
+    stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
+
+    if not os.path.exists('sounds'):
+        os.makedirs('sounds')
+
     # input('Speak for 20 secs after pressing \'Enter\': ')
     print('\nREAD NOW!')
     print('My biggest mistake was attempting to stifle my laughter in a library. It came out as a loud snort, one that '
@@ -31,6 +32,7 @@ def run(RECORD_SECONDS):
     time.sleep(.5)
 
     frames = []
+    print(type(RECORD_SECONDS))
     print(RECORD_SECONDS)
 
     for i in range(0, int(RATE / CHUNK * float(RECORD_SECONDS))):
@@ -49,6 +51,7 @@ def run(RECORD_SECONDS):
     wf.setframerate(RATE)
     wf.writeframes(b''.join(frames))
     wf.close()
+    print('done recored')
 
 
 if __name__ == '__main__':
