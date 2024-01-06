@@ -9,7 +9,7 @@ CHUNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
-RECORD_SECONDS = 20
+# RECORD_SECONDS = 5
 WAVE_OUTPUT_FILENAME = 'output.wav'
 
 p = pyaudio.PyAudio()
@@ -20,8 +20,8 @@ if not os.path.exists('sounds'):
     os.makedirs('sounds')
 
 
-def run():
-    input('Speak for 20 secs after pressing \'Enter\': ')
+def run(RECORD_SECONDS):
+    # input('Speak for 20 secs after pressing \'Enter\': ')
     print('\nREAD NOW!')
     print('My biggest mistake was attempting to stifle my laughter in a library. It came out as a loud snort, one that '
           'would make the largest pig proud. The librarian quietly shuffled over. She slid her glasses down her nose. I'
@@ -31,8 +31,9 @@ def run():
     time.sleep(.5)
 
     frames = []
+    print(RECORD_SECONDS)
 
-    for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
+    for i in range(0, int(RATE / CHUNK * float(RECORD_SECONDS))):
         data = stream.read(CHUNK)
         frames.append(data)
 
@@ -51,4 +52,4 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    run(5)

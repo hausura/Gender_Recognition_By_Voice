@@ -7,21 +7,12 @@ import pandas as pd
 import neural_net
 import sound_recorder
 
-if __name__ == '__main__':
-    while True:
-        print('\nMenu')
-        print('1. Train Neural Net')
-        print('2. Analyse Voice')
-        print('3. Exit')
-        option = input('Enter Option Number: ')
+import streamlit as st 
 
-        if option == '1':
-            neural_net.run()
-        elif option == '2':
-            if not os.path.isfile('trained_neural_net'):  # check if neural_net file exists
-                print('\nNeural net not trained. First train the neural net.')
-            else:
-                sound_recorder.run()
+
+def show(duration):
+                # sound_recorder.run(5)
+                sound_recorder.run(5)
 
                 print('\nExtracting data from recorded voice...\n')
                 run(['Rscript', 'getAttributes.r',
@@ -38,9 +29,26 @@ if __name__ == '__main__':
 
                 print('\nPrediction: \r')
                 print('Female' if trained_neural_net.predict(data)[0] == 0 else 'Male')  # print prediction
-                break
-        elif option == '3':
-            print('\nExiting...')
-            break
-        else:
-            print('\nInvalid option. Please try again...')
+                st.write('\nPrediction: \r')
+                st.write('Female' if trained_neural_net.predict(data)[0] == 0 else 'Male')  # print prediction
+
+
+if __name__ == '__main__':
+    # run()
+    button_clicked = st.button("Record")
+    duration = st.slider('Thời lượng ghi âm (giây)', 1, 10, 3)
+    # st.write(float(duration))
+
+    if (button_clicked):
+        st.write("Recording...!")
+        show(duration)
+
+        st.write("Done!")
+        if st.button('Reset'):
+            st.empty()
+
+
+
+
+
+
